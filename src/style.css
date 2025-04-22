@@ -1,63 +1,93 @@
+:root {
+  --blue: #007bff;
+}
+
 body {
   margin: 0;
 }
 
-._container {
-  /* flex: 1 1 100; */
-  display: flex;
-  justify-content: space-around;
-  margin: 0 auto;
+li {
+  list-style: none;
+}
 
-  @media (max-width: 1200px) {
+._container {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  ._container {
     flex: 1 1 auto;
-    flex-wrap: wrap;
   }
 }
 
 .header {
   display: flex;
+  height: 60px;
+}
 
-  &__container {
-    width: 100%;
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__logo {
-    /* Empty block */
-  }
-
-  &__logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  &__menu {
-    display: flex;
-  }
+.header__container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {
-  &__img {
-    /* Empty block */
-  }
+  flex: 1 1 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__logo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.header__logo img {
+  width: 100%;
+  height: 100;
+  object-fit: cover;
+}
+
+.header__menu {
+  display: flex;
 }
 
 .menu {
+  flex: 1 1 60%;
+}
+
+.menu__items {
   display: flex;
-  flex: 1 1 auto;
+  flex: 0 1 100%;
+  justify-content: space-around;
+}
 
-  &__items {
-    display: flex;
-  }
+.menu__link {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
 
-  &__item {
-    /* Empty block */
-  }
+.menu__link._is-active::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: var(--blue);
+  margin-top: 4px;
+}
 
-  &__link {
-    text-transform: uppercase;
-  }
+.menu__item:nth-child(1) .menu__link:hover {
+  color: blue; /* пример — покрасить текст */
+}
+
+.menu__item:nth-child(4) .menu__link:hover {
+  color: blue; /* пример — покрасить текст */
 }
